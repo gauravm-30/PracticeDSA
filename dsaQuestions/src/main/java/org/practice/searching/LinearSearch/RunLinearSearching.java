@@ -1,8 +1,8 @@
 package org.practice.searching.LinearSearch;
 
-public class RunSearching {
+public class RunLinearSearching {
   public static void main(String[] args) {
-    System.out.println("Running Searching Algorithms");
+    System.out.println("Running Linear Searching Algorithms");
     LinearSearchInt.runLinearSearch();
     LinearSearchString.runLinearSearch();
     LinearSearchIn2DArray.performLinearSearchOnIntIn2DArr();
