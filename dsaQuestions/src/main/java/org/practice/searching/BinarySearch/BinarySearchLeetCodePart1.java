@@ -57,6 +57,7 @@ public class BinarySearchLeetCodePart1 {
         startIndex = midIndex + 1;
       }
     }
+    // I think it should be endIndex here
     return letters[startIndex % letters.length];
   }
 

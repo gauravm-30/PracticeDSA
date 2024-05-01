@@ -35,7 +35,7 @@ public class LinearSearchString {
   }
 
   /*
-     *In Java, the Character class provides constants for the maximum and minimum values that a char data type can hold:
+   *In Java, the Character class provides constants for the maximum and minimum values that a char data type can hold:
 
   Character.MAX_VALUE: This constant represents the maximum value that a char can store.
   *  It corresponds to the Unicode character with the hexadecimal value 0xFFFF (which is equivalent to decimal 65535).

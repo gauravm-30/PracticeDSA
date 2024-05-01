@@ -36,7 +36,6 @@ public class BinarySearch2DArray {
       col = matrix[0].length - 1; // starting point of the column, it can be n*m matrix also
     }
     // starting point of the column, it can be n*m matrix also
-
     while (row < matrix.length && col >= 0) {
       if (matrix[row][col] == target) {
         return new int[] {row, col};

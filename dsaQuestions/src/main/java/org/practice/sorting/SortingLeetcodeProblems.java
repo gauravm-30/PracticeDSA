@@ -154,7 +154,7 @@ public class SortingLeetcodeProblems {
     while (i < nums.length) {
       int correctIndex = nums[i] - 1;
       // it is giving the correct index of value present at ith index
-      // we should ignore if current index and correct index values are same.It we swap then it will
+      // we should ignore if current index and correct index values are same.If we swap then it will
       // go into infinite loop
       // For ex: [5,2,3,4,5,5,5]  Here infinite may occur as 5 is at its correct position and its on
       // zero index also

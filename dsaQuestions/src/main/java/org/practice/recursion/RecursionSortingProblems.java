@@ -30,6 +30,7 @@ public class RecursionSortingProblems {
       }
       bubbleSortHelper(arr, sIndex + 1, eIndex);
     } else {
+      // restart the next pass
       bubbleSortHelper(arr, 0, eIndex - 1);
     }
   }
