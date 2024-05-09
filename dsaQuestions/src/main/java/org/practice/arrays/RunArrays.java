@@ -9,6 +9,7 @@ public class RunArrays {
     //    RemoveDuplicateFromArray.runRemoveDuplicates();
     //    RemoveElementInPlace.runRemoveElement();
     //    PlusOne.runPlusOne();
-    SingleNumber.runSingleNumber();
+    //    SingleNumber.runSingleNumber();
+    ProductOfArrayExceptSelf.runProductExceptSelf();
   }
 }

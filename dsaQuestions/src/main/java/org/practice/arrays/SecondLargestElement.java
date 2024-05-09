@@ -6,7 +6,7 @@ package org.practice.arrays;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ThirdLargestElement {
+public class SecondLargestElement {
 
   // Approach 1
   // Sort the array
