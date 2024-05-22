@@ -1,6 +1,7 @@
 package org.practice.arrays;
 
-public class MoveAllZerosToBegEnd {
+// https://leetcode.com/problems/move-zeroes/description/
+public class MoveAllZerosToEnd {
 
   // Use two pointer technique
   public static void moveZeroes(int[] nums) {

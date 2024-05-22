@@ -1,5 +1,9 @@
 package org.practice.searching.BinarySearch;
 
+// Clap Clap
+// Observation : When target element is not found , at that time
+// eIndex will point to element just smaller than the target element and sIndex will point to
+// element just larger than then target element
 public class FloorAndCeilOfNumber {
   public static void runFloorAndCeilOfNumber() {
     int[] sortedArrayAsc = {1, 3, 7, 9, 10, 12, 16, 19};
@@ -55,6 +59,12 @@ public class FloorAndCeilOfNumber {
       return Integer.MIN_VALUE;
     }
 
+    // Case 2  what if all elements are same and equal to target ,in such scenario strict floor and
+    // ceil doesn't exist
+    if (sortedArray[sIndex] == sortedArray[eIndex] && target == sortedArray[eIndex]) {
+      return Integer.MIN_VALUE;
+    }
+
     while (sIndex <= eIndex) {
       int mid = sIndex + (eIndex - sIndex) / 2;
       if (target == sortedArray[mid]) {
@@ -77,7 +87,7 @@ public class FloorAndCeilOfNumber {
   }
 
   private static int floorOfNumber(int[] sortedArray, int sIndex, int eIndex, int target) {
-    // case 1 : When the array has only one element
+    // case 1 : When the target is less than the min element
     if (target < sortedArray[sIndex]) {
       return Integer.MIN_VALUE;
     }

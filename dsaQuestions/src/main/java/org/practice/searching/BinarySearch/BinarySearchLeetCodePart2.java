@@ -7,15 +7,23 @@ public class BinarySearchLeetCodePart2 {
   //   1. Peak index in mountain array/bitonic array
   //   2. Given an integer array nums , find a peak element and return its index.
   //   3. If the array contains multiple peaks , then return the index of any of the peaks.
+  //   4. Number can be repeated
   public static int peakIndexInMountainArray(int[] mountainArr) {
     int sIndex = 0;
     int eIndex = mountainArr.length - 1;
 
+    // we can also use peak index variable if we want
+    // int peakIndex=-1;
+    // if(you in dec part of array)
+    // peakIndex = mid
+    // eIndex= mid -1
+
     // here we haven't used startIndex<=endIndex because if both are equal and
-    // the array is ascending order then at last start=mid=endIndex will pont to last
+    // the array is ascending order then at last start=mid=endIndex may  point to last
     // element of the  array and at that time we cannot apply the check of midIndex and midIndex+1
     while (sIndex < eIndex) {
       int mid = sIndex + (eIndex - sIndex) / 2;
+
       if (mountainArr[mid] > mountainArr[mid + 1]) {
         // you are in dec part of the array
         // this may be the ans but look at the  left

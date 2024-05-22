@@ -38,7 +38,7 @@ public class SortingLeetcodeProblems {
     int i = 0;
     while (i < arr.length) {
       int correctIndex = arr[i];
-      // If arr[i] > arr.length then ignore it
+      // If arr[i] > arr.length then ignore it ,i.e. out of bound exception
       if (arr[i] < arr.length && arr[i] != arr[correctIndex]) {
         swap(arr, i, correctIndex);
       } else {
@@ -54,6 +54,7 @@ public class SortingLeetcodeProblems {
     List<Integer> missingNumbers = new ArrayList<>();
     applyCyclicSortForDisappearedNumbers(nums);
     for (int i = 0; i < nums.length; i++) {
+
       if (nums[i] != i + 1) {
         missingNumbers.add(i + 1);
       }

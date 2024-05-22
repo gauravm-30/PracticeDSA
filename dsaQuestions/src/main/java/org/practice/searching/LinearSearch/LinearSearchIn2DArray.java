@@ -26,11 +26,13 @@ public class LinearSearchIn2DArray {
     }
 
     for (int row = 0; row < arr.length; row++) {
-      // check whether the each row length is not euqal to zero
+      // check whether the each row length is not equal to zero
       if (arr[row].length != 0) {
         for (int col = 0; col < arr[row].length; col++) {
           int element = arr[row][col];
-          return new int[] {row, col};
+          if (element == target) {
+            return new int[] {row, col};
+          }
         }
       }
     }

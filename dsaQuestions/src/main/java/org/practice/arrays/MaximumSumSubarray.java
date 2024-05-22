@@ -2,8 +2,8 @@ package org.practice.arrays;
 
 // https://leetcode.com/problems/maximum-subarray/description/
 // Given an integer array nums, find the
-// subarray
-// with the largest sum, and return its sum.
+// subarray with the largest sum, and return its sum.
+// Also Known as kadane algo
 public class MaximumSumSubarray {
 
   // approach says that maintain two variable i.e. current sum and maximumSum

@@ -39,8 +39,8 @@ public class RecursionSubsetSubsequence {
   //          [],                    //proper subset
   //          [1],[2],[3],
   //          [1,2] OR [2,1]  take only one //order can't be change so [1,2]
-  //          [1,3] OR [3,1]  take only one
-  //          [1,4] OR [4,1]  take only one
+  //          [1,3] OR [3,1]  take only one //order can't be change so [1,3]
+  //          [1,4] OR [4,1]  take only one //order can't be change so [1,4]
   //          [2,3] OR [3,2]  take only one
   //          [2,4] OR [4,2]  take only one
   //          [3,4] OR [4,3]  take only one
@@ -225,18 +225,6 @@ public class RecursionSubsetSubsequence {
     return ansFromLeft;
   }
 
-  private void printSubsetsAlongWithAsciiChar(String processed, String unprocessed) {
-    if (unprocessed.isEmpty()) {
-      System.out.println(processed);
-      return;
-    }
-    char ch = unprocessed.charAt(0);
-    // ch+0 will give ascii value
-    printSubsetsAlongWithAsciiChar(processed + ch, unprocessed.substring(1));
-    printSubsetsAlongWithAsciiChar(processed + (ch + 0), unprocessed.substring(1));
-    printSubsetsAlongWithAsciiChar(processed, unprocessed.substring(1));
-  }
-
   private static List<String> printSubsetsAlongWithAsciiCharV2(
       String processed, String unprocessed) {
     if (unprocessed.isEmpty()) {
@@ -302,5 +290,17 @@ public class RecursionSubsetSubsequence {
     }
 
     return result;
+  }
+
+  private void printSubsetsAlongWithAsciiChar(String processed, String unprocessed) {
+    if (unprocessed.isEmpty()) {
+      System.out.println(processed);
+      return;
+    }
+    char ch = unprocessed.charAt(0);
+    // ch+0 will give ascii value
+    printSubsetsAlongWithAsciiChar(processed + ch, unprocessed.substring(1));
+    printSubsetsAlongWithAsciiChar(processed + (ch + 0), unprocessed.substring(1));
+    printSubsetsAlongWithAsciiChar(processed, unprocessed.substring(1));
   }
 }

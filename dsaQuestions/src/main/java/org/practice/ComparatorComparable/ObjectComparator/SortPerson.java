@@ -8,10 +8,10 @@ public class SortPerson {
 
   public static void main(String[] args) {
     List<Person> personList = new ArrayList<>();
-    personList.add(new Person(1, "Maurya", 21, new Address()));
-    personList.add(new Person(1, "Gaurav", 21, new Address()));
-    personList.add(new Person(1, "Ashish", 23, new Address()));
-    personList.add(new Person(1, "Sandeep", 22, new Address()));
+    personList.add(new Person(1, "Maurya", 21, true, new Address()));
+    personList.add(new Person(1, "Gaurav", 21, false, new Address()));
+    personList.add(new Person(1, "Ashish", 23, true, new Address()));
+    personList.add(new Person(1, "Sandeep", 22, false, new Address()));
 
     sortPersonObject(personList);
   }
@@ -36,7 +36,17 @@ public class SortPerson {
           }
           return Integer.compare(p1.age, p2.age);
         };
-    personList.sort(sortByAgeAndName);
+
+    Comparator<Person> sortByHavePet =
+        (Person p1, Person p2) -> {
+          // return Boolean.compare(p1.havePet, p1.havePet);
+
+          if (p1.havePet == p2.havePet) {
+            return 0;
+          }
+          return (!p1.havePet ? -1 : 1);
+        };
+    personList.sort(sortByHavePet);
     personList.forEach(person -> System.out.println("person.toString() = " + person.toString()));
   }
 }

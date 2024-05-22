@@ -2,7 +2,7 @@ package org.practice.arrays;
 
 // https://leetcode.com/problems/rotate-array/description/
 public class RotateAnArray {
-  // Rotate an array k times
+  // Rotate an array k times clockwise
 
   // approach 1
   // shift the array to the right by k times

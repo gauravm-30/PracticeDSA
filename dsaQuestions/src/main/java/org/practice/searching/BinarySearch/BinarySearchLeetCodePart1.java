@@ -17,6 +17,7 @@ public class BinarySearchLeetCodePart1 {
     int startIndex = 0;
     int endIndex = letters.length - 1;
 
+    // wrap around condition
     if (target >= letters[endIndex]) {
       return letters[startIndex];
     }
@@ -58,61 +59,12 @@ public class BinarySearchLeetCodePart1 {
       }
     }
     // I think it should be endIndex here
-    return letters[startIndex % letters.length];
+    return letters[endIndex % letters.length];
   }
 
   // Problem 2:
   // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
   /*Find the first and last position of the element in sorted array*/
-
-  /*if target not found return [-1,-1]*/
-  /*First find the first occurrence of the element
-   * if found, find the last occurrence of the element */
-  public int[] searchRange(int[] nums, int target) {
-    int[] range = {-1, -1};
-    if (nums == null || nums.length == 0) {
-      return new int[] {-1, -1};
-    }
-    range[0] = searchOccurence(nums, target, true);
-
-    // means element is there
-    if (range[0] != -1) {
-      range[1] = searchOccurence(nums, target, false);
-    }
-    return range;
-  }
-
-  private int searchOccurence(int[] nums, int target, boolean isStartIndex) {
-    int ans = -1;
-    int sIndex = 0;
-    int eIndex = nums.length - 1;
-    while (sIndex <= eIndex) {
-      int mid = sIndex + (eIndex - sIndex) / 2;
-      if (target == nums[mid]) {
-        ans = mid;
-        if (isStartIndex) {
-          eIndex = mid - 1;
-        } else {
-          sIndex = mid + 1;
-        }
-      } else if (target < nums[mid]) {
-        eIndex = mid - 1;
-      } else {
-        sIndex = mid + 1;
-      }
-    }
-    return ans;
-  }
-
-  /* Find the position of element in a sorted array of infinite numbers
-   * Now imagine the array is infinite means you can't use the arr.length function
-   * Since array is infinite there will be no question of arrayIndexOutOfBoundException
-   * We don't need to care about the OutOfBoundException
-   *
-   * Till now, we are reducing the search space every time if we don't  find the target element
-   * Now we will increase the search space every time ,if we don't find the element
-   * bottom-up approach
-   */
 
   public static int findElementPosInInfiniteArray(int[] infiniteArr, int target) {
     // initially we will put start and end as 0 and  1
@@ -143,5 +95,56 @@ public class BinarySearchLeetCodePart1 {
       }
     }
     return -1;
+  }
+
+  /* Find the position of element in a sorted array of infinite numbers
+   * Now imagine the array is infinite means you can't use the arr.length function
+   * Since array is infinite there will be no question of arrayIndexOutOfBoundException
+   * We don't need to care about the OutOfBoundException
+   *
+   * Till now, we are reducing the search space every time if we don't  find the target element
+   * Now we will increase the search space every time ,if we don't find the element
+   * bottom-up approach
+   */
+
+  /*if target not found return [-1,-1]*/
+  /*First find the first occurrence of the element
+   * if found, find the last occurrence of the element */
+  public int[] searchRange(int[] nums, int target) {
+    int[] range = {-1, -1};
+    if (nums == null || nums.length == 0) {
+      return new int[] {-1, -1};
+    }
+    range[0] = searchOccurence(nums, target, true);
+
+    // means element is there
+    if (range[0] != -1) {
+      range[1] = searchOccurence(nums, target, false);
+    }
+    return range;
+  }
+
+  private int searchOccurence(int[] nums, int target, boolean isStartIndex) {
+    int ans = -1;
+    int sIndex = 0;
+    int eIndex = nums.length - 1;
+    while (sIndex <= eIndex) {
+      int mid = sIndex + (eIndex - sIndex) / 2;
+      if (target == nums[mid]) {
+        ans = mid;
+
+        // checking if startIndex is required
+        if (isStartIndex) {
+          eIndex = mid - 1;
+        } else {
+          sIndex = mid + 1;
+        }
+      } else if (target < nums[mid]) {
+        eIndex = mid - 1;
+      } else {
+        sIndex = mid + 1;
+      }
+    }
+    return ans;
   }
 }

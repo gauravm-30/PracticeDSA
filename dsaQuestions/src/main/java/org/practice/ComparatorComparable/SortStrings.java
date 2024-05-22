@@ -30,8 +30,8 @@ public class SortStrings {
     strings.add("Sandeep");
 
     // create a comparator for string
-    Comparator<String> stringComparator =
-        new Comparator<String>() {
+    Comparator<String> stringDescComparator =
+        new Comparator<>() {
           public int compare(String o1, String o2) {
             return -(o1.compareTo(o2));
           }
@@ -51,13 +51,14 @@ public class SortStrings {
     sortStrings(strings, stringInsensitiveComparator);
 
     // sort them into descending order
-    sortStrings(strings, stringComparator);
+    sortStrings(strings, stringDescComparator);
 
     strings.forEach(System.out::println);
   }
 
   private static void sortStrings(List<String> strings, Comparator<String> stringComparator) {
     strings.sort(String::compareToIgnoreCase);
+    strings.sort(stringComparator);
   }
 
   // We can also use this below one for sorting

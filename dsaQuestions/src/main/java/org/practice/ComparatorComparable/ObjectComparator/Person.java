@@ -5,15 +5,16 @@ public class Person {
   String name;
 
   int age;
-
+  boolean havePet;
   Address address;
 
   public Person() {}
 
-  public Person(int id, String name, int age, Address address) {
+  public Person(int id, String name, int age, boolean havePet, Address address) {
     this.id = id;
     this.name = name;
     this.age = age;
+    this.havePet = havePet;
     this.address = address;
   }
 
@@ -27,6 +28,8 @@ public class Person {
         + '\''
         + ", age="
         + age
+        + ", havePet="
+        + havePet
         + ", address="
         + address
         + '}';

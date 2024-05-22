@@ -1,31 +1,13 @@
 package org.practice.linkedlist;
 
 public class LinkedListLeetcodeProblems {
-  // As defined in leetcode
-  // Definition of single link list
-  public class ListNode {
-    int data;
-    ListNode next;
-
-    public ListNode() {} // this will create a ListNode with value 0,null;
-
-    public ListNode(int data) {
-      this.data = data;
-    }
-
-    public ListNode(int data, ListNode next) {
-      this.data = data;
-      this.next = next;
-    }
-  }
-
   // delete duplicates from linked list
   public ListNode deleteDuplicates(ListNode head) {
     if (head == null) {
       return head;
     }
     ListNode temp = head;
-    while (temp != null) {
+    while (temp != null && temp.next != null) {
       if (temp.data == temp.next.data) {
         temp = temp.next.next;
       } else {
@@ -252,46 +234,75 @@ public class LinkedListLeetcodeProblems {
     return temp;
   }
 
-  //Approach 1
+  // Approach 1
   /*
-  *1.First find the length of the linked list.
-  *2.Then traverse again for length()-N + 1 times. You will get the nth node from last.
-  * 3. TC - O(length()) + O(length()-N)
-  * */
-  private ListNode getNthNodeFromLastV1(ListNode head, int n){
+   *1.First find the length of the linked list.
+   *2.Then traverse again for length()-N + 1 times. You will get the nth node from last.
+   * 3. TC - O(length()) + O(length()-N)
+   * */
+  private ListNode getNthNodeFromLastV1(ListNode head, int n) {
     return null;
   }
 
-  //Approach 2
+  // Approach 2
   /*
-  *1.Take fast and slow pointers pointing to the head.
-  *2.Then move fast pointer by N times.
-  *3.Now distance between fast and slow will be always N.
-  *4.Now move slow and fast pointer one step each time till fast reaches end.
-  *5. Now slow will be pointing to the nth node from last.
-  * */
-  private ListNode getNthNodeFromLastV2(ListNode head, int n){
+   *1.Take fast and slow pointers pointing to the head.
+   *2.Then move fast pointer by N times.
+   *3.Now distance between fast and slow will be always N.
+   *4.Now move slow and fast pointer one step each time till fast reaches end.
+   *5. Now slow will be pointing to the nth node from last.
+   * */
+  private ListNode getNthNodeFromLastV2(ListNode head, int n) {
     ListNode slow = head;
     ListNode fast = head;
-    int count=0;
-    while(count<n && fast!=null){
-      fast=fast.next;
+    int count = 0;
+    while (count < n && fast != null) {
+      fast = fast.next;
       count++;
     }
-    //At this point fast will be a nth position and slow will be at 1 position.
-    //Difference between them is n-1;
-    while(fast.next!=null){
-      slow=slow.next;
-      fast=fast.next;
+    // At this point fast will be a nth position and slow will be at 1 position.
+    // Difference between them is n-1;
+    while (fast.next != null) {
+      slow = slow.next;
+      fast = fast.next;
     }
-    //At this point slow have reached at the position at the nth position from end.
-    //Now return the slow pointer;
-    //also handle the edge cases
+    // At this point slow have reached at the position at the nth position from end.
+    // Now return the slow pointer;
+    // also handle the edge cases
 
     return slow;
   }
 
-  private int lengthOfLinkedListHavingCycle(){
+  /*
+    * Use Floyd’s Cycle Finding Algorithm (Tortoise and Hare Algorithm) to detect the cycle in the linked list. If the algorithm detects a cycle, it means the list contains one.
+  If there is no cycle, the length of the list is simply the number of nodes in the list.
+  Find the Length:
+  Once you’ve detected the cycle,
+  * keep one pointer (let’s call it slow) at the meeting point of the two pointers (where they both meet after detecting the cycle).
+  Move another pointer (let’s call it fast)
+  * from the meeting point and count the number of nodes until it reaches the meeting point again. This count represents the length of the cycle.
+  The total length of the linked list with the cycle is the sum of
+  * the length of the cycle and the length of the non-cyclic part of the list.
+    * */
+  private int lengthOfLinkedListHavingCycle() {
     return -1;
+  }
+
+  // As defined in leetcode
+  // Definition of single link list
+  public class ListNode {
+    int data;
+    ListNode next;
+
+    public ListNode() {} // this will create a ListNode with value 0,null;
+
+    public ListNode(int data) {
+      this.data = data;
+    }
+
+    public ListNode(int data, ListNode next) {
+      this.data = data;
+      this.next = next;
+    }
   }
 }
