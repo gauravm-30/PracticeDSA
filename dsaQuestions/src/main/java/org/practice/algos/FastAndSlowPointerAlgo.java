@@ -1,3 +1,5 @@
 package org.practice.algos;
 
-public class FastAndSlowPointerAlgo {}
+public class FastAndSlowPointerAlgo {
+  /*Basically used in linked list*/
+}

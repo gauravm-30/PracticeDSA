@@ -5,16 +5,16 @@ public class MoveAllZerosToEnd {
 
   // Use two pointer technique
   public static void moveZeroes(int[] nums) {
-    int z = 0; // will represent the index of zero value
-    int nz = 0; // will represent the index of non-zero value
-    while (nz < nums.length) {
-      // move till nz is at non-zero element
-      if (nums[nz] == 0) {
-        nz++;
+    int zIndex = 0; // will represent the index of zero value
+    int nzIndex = 0; // will represent the index of non-zero value
+    while (nzIndex < nums.length) {
+      // move till nzIndex is at non-zero element
+      if (nums[nzIndex] == 0) {
+        nzIndex++;
       } else {
-        swap(z, nz, nums);
-        z++;
-        nz++;
+        swap(zIndex, nzIndex, nums);
+        zIndex++;
+        nzIndex++;
       }
     }
   }

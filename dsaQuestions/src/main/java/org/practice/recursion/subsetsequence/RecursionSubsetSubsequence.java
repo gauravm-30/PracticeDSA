@@ -5,7 +5,8 @@ import java.util.List;
 
 public class RecursionSubsetSubsequence {
 
-  // Definition of Subarray and Example
+  // Definition of Subarray/Substrings and Example
+
   // As we know that an array is a linear collection of values stored at contiguous memory
   // locations. So, what is subarray? Well, a subarray is nothing but a slice of these contiguous
   // memory locations of the actual array. In simpler terms, a subarray is nothing but any
@@ -17,16 +18,22 @@ public class RecursionSubsetSubsequence {
   //
   //    Example: Let the array be: arr = [1, 2, 3] Then one subarray of arr can be: subarray = [1,
   // 2] All the sub-arrays of arr are:
-  //
+  //            [] -Empty subarray
   //            [1]
   //            [2]
   //            [3]
   //            [1, 2]
   //            [2, 3]
   //            [1, 2, 3]
+
+  //  An empty array [] is considered a subarray of any array, including [1, 2, 3]. A subarray is
+  // defined as a contiguous part of an array. Since the empty array has no elements, it satisfies
+  // the condition of being a subarray.
+
   // **[1,3] is not a subarray because it is not contiguous
   //   So, we conclude that the size of the subarray can range from 1 to the size of the actual
   // array.
+  // There are n*(n+1)/2 non-empty subarrays/substrings.
 
   //    Definition of Subset and Example
   //    A subset is often confused with subarray and subsequence but a subset is nothing but any
@@ -49,11 +56,15 @@ public class RecursionSubsetSubsequence {
   //          [1,2,4]
   //          [1,3,4]
   //          [2,3,4]
-  //          [1,2,3,4]    // improper subset of [1,2,3,4], Except this all above subsets are
+  //          [1,2,3,4]    // improper subset of [1,2,3,4],
+  // Except this all above subsets are
   // proper subset of [1,2,3,4] which includes [] this also.
   //
   //  So, we can conclude that subset is the superset of subarrays i.e. all the subarrays
   // are subsets but vice versa is not true.
+
+  // Total subsets = 2^n
+  // Total proper subset = 2^n -1
 
   //    Definition of Subsequence and Example
   //    As the name suggests, a subsequence is a sequence of the elements of the array obtained by

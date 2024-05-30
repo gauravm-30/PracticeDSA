@@ -17,7 +17,7 @@ public class FindCommonElementsFromArray {
     int[] nums1 = {4, 7, 1, 3, 9, 4, 9, 5, 5};
     int[] nums2 = {2, 4, 5, 9};
 
-    // it will add the unique elements froms nums 1
+    // it will add the unique elements from nums 1
     Set<Integer> integerSet = new HashSet<>();
     for (int num : nums1) {
       integerSet.add(num);

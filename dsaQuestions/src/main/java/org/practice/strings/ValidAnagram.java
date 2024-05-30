@@ -48,7 +48,7 @@ public class ValidAnagram {
     int[] characterArray = new int[128];
     Arrays.fill(characterArray, 0);
 
-    for (char character : s2.toCharArray()) {
+    for (char character : s1.toCharArray()) {
       characterArray[character]++;
     }
 

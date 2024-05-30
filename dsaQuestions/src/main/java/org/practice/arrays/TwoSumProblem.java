@@ -70,7 +70,7 @@ public class TwoSumProblem {
     for (int i = 0; i < arr.length; i++) {
       int remainingValue = target - arr[i];
       if (indexMap.containsKey(remainingValue)) {
-        return new int[] {i, indexMap.get(remainingValue)};
+        return new int[] {indexMap.get(remainingValue), i}; // remaining value + current value index
       } else {
         indexMap.put(arr[i], i);
       }
