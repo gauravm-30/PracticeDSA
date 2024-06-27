@@ -19,6 +19,7 @@ public class StringProblems {
     for (int i = s2.length() - 1; i >= 0; i--) {
       char ch = s2.charAt(i);
       reverseString = reverseString.append(ch);
+      //      reverseString = reverseString.append(String.valueOf(ch));
     }
     System.out.println("reverseString = " + reverseString);
   }

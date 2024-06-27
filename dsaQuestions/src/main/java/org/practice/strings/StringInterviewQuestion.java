@@ -1,6 +1,9 @@
 package org.practice.strings;
 
 public class StringInterviewQuestion {
+  public static void main(String[] args) {
+    stringsIntern();
+  }
 
   public static void stringsIntern() {
 
@@ -17,7 +20,8 @@ public class StringInterviewQuestion {
     String s3 = new String("Gaurav");
     // Below line will not create any object because of intern
     String s4 = new String("Gaurav").intern();
-
+    System.out.println(s1 == s4);
+    System.out.println(s1 == s3);
     String s5 = "Baeldung";
     String s6 = new String("Baeldung");
     String s7 = new String("Baeldung").intern();

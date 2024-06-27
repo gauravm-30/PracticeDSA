@@ -97,6 +97,10 @@ public class BinarySearchLeetCodePart1 {
     return -1;
   }
 
+  public int[] findFirstAndLastIndex(int[] nums, int target) {
+    return searchRange(nums, target);
+  }
+
   /* Find the position of element in a sorted array of infinite numbers
    * Now imagine the array is infinite means you can't use the arr.length function
    * Since array is infinite there will be no question of arrayIndexOutOfBoundException
