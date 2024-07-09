@@ -8,7 +8,7 @@ public class LinearSearchIn2DArray {
      * total number of elements(columns) in each array of the 2D array = arr[0].length
      * int[][] arr={{},{},{}}; valid 2D array and  has arr.length=3 and arr.length[0].length=0
      * */
-    int[][] empty2DArr = {{}, {}, {}}; // here arr.length==3
+    int[][] empty2DArr = {{}, {}, {}}; // here arr.length==3 , but arr[0].length=0 arr[1].length=1
     int[][] empty2DArr2 = {}; // here arr.length==0
     int[][] arr = {{-5, 5}, {-3, 4, 0}, {1, 9, 3}, {}};
     int target = 0;

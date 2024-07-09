@@ -8,4 +8,6 @@ public class RunLinearSearching {
     LinearSearchIn2DArray.performLinearSearchOnIntIn2DArr();
     LinearSearchLeetCode.runLinearSearch();
   }
+
+  public static void index() {}
 }

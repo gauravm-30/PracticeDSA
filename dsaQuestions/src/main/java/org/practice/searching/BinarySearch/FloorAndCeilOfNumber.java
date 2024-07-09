@@ -122,7 +122,7 @@ public class FloorAndCeilOfNumber {
   }
 
   private static int strictCeilOfNumber(int[] sortedArray, int sIndex, int eIndex, int target) {
-    // case 1 : When the array has only one element
+    // case 1 : When the array has only one element or when ceil doesn't exist
     if (target >= sortedArray[eIndex]) {
       return Integer.MAX_VALUE;
     }
@@ -148,7 +148,7 @@ public class FloorAndCeilOfNumber {
   }
 
   private static int ceilOfNumber(int[] sortedArray, int sIndex, int eIndex, int target) {
-    // case 1 : When the array has only one element
+    // case 1 : When the array has only one element or when ceil doesn't exist
     if (target > sortedArray[eIndex]) {
       return Integer.MAX_VALUE;
     }
