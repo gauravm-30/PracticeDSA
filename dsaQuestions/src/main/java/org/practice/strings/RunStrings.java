@@ -4,7 +4,7 @@ public class RunStrings {
   public static void main(String[] args) {
     //    StringsDataType.runString();
     //    StringPerformance.runPerformance();
-    StringProblems.runStringProblems();
+    //    StringProblems.runStringProblems();
     //    StringInterviewQuestion.stringsIntern();
   }
 }

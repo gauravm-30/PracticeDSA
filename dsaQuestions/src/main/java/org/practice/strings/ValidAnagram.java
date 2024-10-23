@@ -14,6 +14,7 @@ public class ValidAnagram {
 
   // Approach 1
   // TC O(NlogN)
+  //SC O(2N) == O(N)
   private static boolean isValidAnagramV1(String s1, String s2) {
 
     // check the length of the characters
@@ -36,17 +37,29 @@ public class ValidAnagram {
   // Approach 2
   // Using extra space Since space is constant
   // TC : O(N)
-  // SC : O(128) == O(1)
+  // SC : O(255) == O(1)
+
+  //This solution is faster with the time complexity of O(n).
+  // However, it needs extra space for the counting array.
+  // At 256 integers, for ASCII that’s not too bad.
+  //However, if we need to increase CHARACTER_RANGE to support multiple-byte character sets such as UTF-8,
+  // this would become very memory hungry.
+  // Therefore, it’s only really practical when the number of possible characters is in a small range.
   private static boolean isValidAnagramV2(String s1, String s2) {
 
     // check the length of the characters
     if (s1.length() != s2.length()) {
       return false;
     }
-    // Ascii characters are from 0 to 127
+    // Total Ascii characters are from 0 to 255
     // Consists all the characters  special characters as well as english letters also
-    int[] characterArray = new int[128];
+    int[] characterArray = new int[255];
     Arrays.fill(characterArray, 0);
+
+//    for(int i = 0; i < s1.length(); i++) {
+//      characterArray[s1.charAt(i)]++;
+//      characterArray[s2.charAt(i)]--;
+//    }
 
     for (char character : s1.toCharArray()) {
       characterArray[character]++;
@@ -65,6 +78,8 @@ public class ValidAnagram {
   }
 
   // Approach 3 using hashmap
+  //TC O(3N) == O(N)
+  //SC O(N)
   private static boolean isValidAnagramV3(String s1, String s2) {
 
     // check the length of the characters

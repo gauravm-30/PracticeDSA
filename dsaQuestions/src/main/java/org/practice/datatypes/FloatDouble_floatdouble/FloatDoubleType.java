@@ -1,4 +1,4 @@
-package org.practice.datatypes.floatAndDouble;
+package org.practice.datatypes.FloatDouble_floatdouble;
 
 public class FloatDoubleType {
   public static void main(String[] args) {
