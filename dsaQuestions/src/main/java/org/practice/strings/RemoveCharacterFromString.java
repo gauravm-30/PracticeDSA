@@ -21,7 +21,9 @@ public class RemoveCharacterFromString {
 
     private static String removeSetOfCharsFrom(String chars,String s2){
         //regex way
+
        return s2.replaceAll(chars,"");
+//       return s2.replace(chars,"");
     }
 
     private static String removeAllOccurrenceFrom(char ch, String s2) {

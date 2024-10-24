@@ -8,6 +8,6 @@ public class ToDos {
    * */
 
   /*
-   * Remove duplicate character from the string
+   * https://hackernoon.com/20-string-coding-interview-questions-for-programmers-6b6735b6d31c
    * */
 }

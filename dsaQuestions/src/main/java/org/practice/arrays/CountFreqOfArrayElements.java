@@ -24,7 +24,7 @@ public class CountFreqOfArrayElements {
       int count = 1;
       // if all elements are uniques then visited will be false always if we comment the below line
       // mark the current element as visited
-      // not necessary but for understanding purpos
+      // not necessary but for understanding purpose
       visited[i] = true;
       for (int j = i + 1; j < arr.length; j++) {
         if (arr[i] == arr[j]) {
