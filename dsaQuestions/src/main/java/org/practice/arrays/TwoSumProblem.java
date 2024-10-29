@@ -7,7 +7,8 @@ import java.util.HashMap;
 public class TwoSumProblem {
 
   // brute force approach
-
+//You may assume that each input would have exactly one solution,
+// and you may not use the same element twice.
   public static int[] twoSumV1(int[] arr, int target) {
 
     // minimum two elements required in the array.

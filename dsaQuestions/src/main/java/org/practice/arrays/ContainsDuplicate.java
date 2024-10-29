@@ -10,7 +10,6 @@ public class ContainsDuplicate {
       if (hs.contains(integer)) return true;
       else hs.add(integer);
     }
-
     return false;
   }
 }

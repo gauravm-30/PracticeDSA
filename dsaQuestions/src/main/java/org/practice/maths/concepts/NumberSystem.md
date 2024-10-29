@@ -58,3 +58,7 @@ These number can be written as product of two smaller natural numbers.
 
 **Note :** 1 is neither composite nor prime number.
 
+
+**Note :** 0 is neither positive nor negative number.
+
+
