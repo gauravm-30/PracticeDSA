@@ -34,8 +34,27 @@ public class RemoveCharacterFromString {
                 sb.append(currChar);
             }
         }
-       return new String(sb);
+       return sb.toString();
     }
+
+    private static String removeAllOccurrenceFromUsingReplace(char ch, String s2) {
+                return s2.replace(String.valueOf(ch),"");
+    }
+
+    private static String removeCharsUsingIndex(int index,String word){
+        //PLease validate the index before using it.
+        StringBuilder sb = new StringBuilder(word);
+        sb.deleteCharAt(index);
+        return sb.toString();
+    }
+
+    private static String removeCharUsingIndex2(int index, String word){
+        //validate index before using it
+        return word.substring(0,index)+word.substring(index+1);
+    }
+
+
+
 
 
     private static String removeDuplicateCharFrom(String s2){

@@ -12,7 +12,7 @@ public class IntegerAndIntConversion {
     }
 
     private static void IntegerListToIntArray() {
-        List<Integer> arr1 = Arrays.asList(1,2,3,4,6);
+        List<Integer> arr1 = Arrays.asList(1,2,3,4,6); //unmodifiable list
         int[] arr = getintArrayFromIntegerList(arr1);
     }
 
@@ -20,7 +20,7 @@ public class IntegerAndIntConversion {
         //auto boxing and auto unboxing
         int a1 =5;
         Integer a2 = a1;
-        a1 = a2;
+        int a3 = a2;
     }
 
     private static void IntegerArrayToIntegerList(){

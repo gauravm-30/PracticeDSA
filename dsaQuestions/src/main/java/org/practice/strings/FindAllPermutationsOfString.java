@@ -1,5 +1,8 @@
 package org.practice.strings;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // There are two main ways to solve this problem, using loops or by using recursion, the second one
 // is what the interviewer expects.
 //
@@ -30,5 +33,49 @@ In this problem,
 * the problem set is reduced and inches towards the base case,
 * when it reaches there stack starts rolling down and calculates the result.
  * */
+
+    public static void main(String[] args){
+        String s1 = "abcd";
+        List<String> allPermutations = getAllPermutations(s1);
+    System.out.println(allPermutations);
+    }
+
+    private static List<String> getAllPermutations(String s1) {
+      return  getPermutationsRecursively("",s1);
+    }
+
+    private static List<String> getPermutationsRecursively(String processed, String unprocessed) {
+        if(unprocessed.isEmpty()){
+            List<String> currentList = new ArrayList<>();
+            currentList.add(processed);
+            return currentList;
+        }
+        List<String> answer = new ArrayList<>();
+        char ch = unprocessed.charAt(0);
+        for(int i = 0; i < processed.length()+1; i++) {
+            String f = processed.substring(0,i);
+            String s = processed.substring(i);
+            List<String> ansFromBelowCalls = getPermutationsRecursively(f+ch+s,unprocessed.substring(1));
+            answer.addAll(ansFromBelowCalls);
+        }
+        return answer;
+    }
+
+    private static int permutationsRecursivelyReturnCount(String processed, String unprocessed) {
+        if (unprocessed.isEmpty()) {
+            return 1;
+        }
+        int count = 0;
+        char ch = unprocessed.charAt(0);
+        for (int i = 0; i < processed.length() + 1; i++) {
+            String f = processed.substring(0, i);
+            String s = processed.substring(i);
+            int countFromBelowCalls =
+                    permutationsRecursivelyReturnCount(f + ch + s, unprocessed.substring(1));
+            count = count + countFromBelowCalls;
+        }
+
+        return count;
+    }
 
 }

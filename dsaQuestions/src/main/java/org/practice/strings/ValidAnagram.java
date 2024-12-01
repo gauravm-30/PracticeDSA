@@ -1,10 +1,13 @@
 package org.practice.strings;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidAnagram {
+public class ValidAnagram implements Serializable {
+
   public static void main(String[] args) {
     String s1 = "tea";
     String s2 = "ate";
@@ -53,9 +56,10 @@ public class ValidAnagram {
     }
     // Total Ascii characters are from 0 to 255
     // Consists all the characters  special characters as well as english letters also
-    int[] characterArray = new int[255];
+    int[] characterArray = new int[256];
     Arrays.fill(characterArray, 0);
 
+    //Important, we cna do it in only one iteration because length of both the is same .
 //    for(int i = 0; i < s1.length(); i++) {
 //      characterArray[s1.charAt(i)]++;
 //      characterArray[s2.charAt(i)]--;
