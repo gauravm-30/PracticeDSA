@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValidAnagram implements Serializable {
+public class ValidAnagram{
 
   public static void main(String[] args) {
     String s1 = "tea";

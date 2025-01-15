@@ -4,10 +4,13 @@ package org.practice.strings;
 import java.util.HashSet;
 import java.util.Set;
 
+//Dynamic Programming problem
+//https://leetcode.com/problems/longest-palindromic-substring/description/?envType=problem-list-v2&envId=string&difficulty=MEDIUM%2CEASY
 public class LargestPalindromicSubstring {
     public static void main(String[] args){
         String word = "qwertyytr";
-    System.out.println(largestPalindromicSubstring(word));
+        String word2 = "babad";
+    System.out.println(largestPalindromicSubstring(word2));
     }
 
     //Brute force approach
@@ -17,7 +20,6 @@ public class LargestPalindromicSubstring {
         Set<String> allSubstrings = getAllSubstrings(word);
         Set<String> getPalindromicStringOnly = getPalindromicString(allSubstrings);
         return getMaxLengthPalindromicString(getPalindromicStringOnly);
-
     }
 
     private static Set<String> getPalindromicString(Set<String> allSubstrings) {
@@ -56,7 +58,7 @@ public class LargestPalindromicSubstring {
     private static Set<String> getAllSubstrings(String word) {
         Set<String> subStringSet = new HashSet<>();
         for(int i = 0; i < word.length(); i++) {
-            for(int j = i+1; j <= word.length() ; j++) {
+            for(int j = i+1; j <= word.length(); j++) {
                 String subString = word.substring(i,j);
                 subStringSet.add(subString);
             }
