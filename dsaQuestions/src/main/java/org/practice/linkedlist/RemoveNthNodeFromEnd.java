@@ -1,6 +1,6 @@
 package org.practice.linkedlist;
 
-public class NthNodeFromEnd {
+public class RemoveNthNodeFromEnd {
     // Approach 1
     /*
      *1.First find the length of the linked list.
@@ -19,25 +19,33 @@ public class NthNodeFromEnd {
      *4.Now move slow and fast pointer one step each time till fast reaches end.
      *5. Now slow will be pointing to the nth node from last.
      * */
-    private ListNode getNthNodeFromLastV2(ListNode head, int n) {
-        ListNode slow = head;
-        ListNode fast = head;
-        int count = 0;
-        while (count < n && fast != null) {
-            fast = fast.next;
-            count++;
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head==null){
+            return head;
         }
-        // At this point fast will be a nth position and slow will be at 1 position.
-        // Difference between them is n-1;
-        while (fast.next != null) {
-            slow = slow.next;
-            fast = fast.next;
-        }
-        // At this point slow have reached at the position at the nth position from end.
-        // Now return the slow pointer;
-        // also handle the edge cases
 
-        return slow;
+        ListNode first = head ;
+        ListNode second = head ;
+        ListNode prev = null;
+        while(n>0){
+            second=second.next;
+            n--;
+        }
+
+        while(second!=null){
+            prev=first;
+            first=first.next;
+            second=second.next;
+        }
+        if(prev==null){
+            head=head.next;
+        }else{
+            prev.next = first.next;
+            first.next=null;
+        }
+        return head;
     }
+
+
 
 }
