@@ -3,13 +3,13 @@ package org.practice.datatypes.FloatDouble_floatdouble;
 public class FloatDoubleType {
   public static void main(String[] args) {
     //    floatAddOperation();
-    //    floatSubstractionOperation();
-    //    floatMultiplicationOperation();
+        floatSubstractionOperation();
+//        floatMultiplicationOperation();
     //    floatDivisionOperation();
-    //    floatRemainderOperation();
-    //    floatConversionUptoSpecificDecimalPlaces();
+//        floatRemainderOperation();
+        floatConversionUptoSpecificDecimalPlaces();
     //    floatInfinityOperation();
-    //    compareFloats();
+        compareFloats();
     //    comparingInfinity();
     comparingUsingThreesold();
   }
@@ -110,7 +110,7 @@ public class FloatDoubleType {
     float f2 = 1.2200f;
 
     float f3 = f1 - f2;
-    String formattedResult1 = String.format("%.2f", f3);
+    String formattedResult1 = String.format("%.2f", f3); //forrmatted result = 0.68
     float f3WithTwoDecimalPlaces = Float.parseFloat(formattedResult1);
     System.out.println("f3WithTwoDecimalPlaces = " + f3WithTwoDecimalPlaces);
 

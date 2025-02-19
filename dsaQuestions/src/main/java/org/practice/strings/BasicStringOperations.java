@@ -8,6 +8,7 @@ public class BasicStringOperations {
         modifyStringUsingCharArray('a','b',wordChar);
         modifySingleCharacterInString(' ','b',word);
         deleteSingleCharacterFromString('v',word);
+        insert("Gaurav","c",5);
     }
 
     private static void modifyStringUsingCharArray(char a, char b, char[] wordChar) {
@@ -44,5 +45,6 @@ public class BasicStringOperations {
         sb.insert(k, ch);
         String modifiedString = sb.toString();
         System.out.println("Modified String: " + modifiedString);
+
     }
 }

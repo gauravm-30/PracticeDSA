@@ -10,7 +10,7 @@ public class FloatDoubleProblems {
     double max = myList[0];
     int indexOfMax = 0;
     for (int i = 1; i < myList.length; i++) {
-      if (myList[i] > max) {
+      if (myList[i] > max) {    // or use if(myList[i]-max>0)
         max = myList[i];
         indexOfMax = i;
       }

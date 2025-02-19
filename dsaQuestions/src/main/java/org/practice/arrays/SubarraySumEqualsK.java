@@ -1,6 +1,8 @@
 package org.practice.arrays;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 //https://leetcode.com/problems/subarray-sum-equals-k/description/
 public class SubarraySumEqualsK {
@@ -9,6 +11,51 @@ public class SubarraySumEqualsK {
       int sum = 5;
     System.out.println(getAllSubArraysOfSumKV3(nums, sum));
     }
+
+
+    //brute force approach
+    //find all subarrays and their sum.
+    //If their sum is equal to the target or not.
+    private static void getAllSubarraysOfSumK(int[] nums, int target){
+        int count = 0;
+    for (int start = 0; start < nums.length; start++) {
+      for (int end = 0; end < nums.length; end++) {
+          int sum=0;
+          for(int i = start; i <=end; i++) {
+              sum+=nums[i];
+          }
+          if(sum==target){
+              count++;
+          }
+      }
+    }
+    }
+
+
+//    https://youtu.be/20v8zSo2v18 pepcoding
+    //Hashmap and prefixSum approach
+    private static int getAllSubarraysOfSumKV4(int[] nums, int target){
+        int count = 0;
+        Map<Integer,Integer> prefixSumFreq = new HashMap<>();
+        //We put firstly (0,1)
+        //consider following edge cases -
+        // [3,2,6] and k = 5
+        // [1,-1,0]  and k = 0
+        //[0,0,0,0]  and k = 0
+        prefixSumFreq.put(0,1);
+
+        int cumulativeSum = 0;
+    for (int i = 0; i < nums.length; i++) {
+         cumulativeSum+=nums[i];
+         if(prefixSumFreq.containsKey(cumulativeSum-target)){
+             count=count+ prefixSumFreq.get(cumulativeSum-target);
+         }
+         prefixSumFreq.put(cumulativeSum,prefixSumFreq.getOrDefault(cumulativeSum,0)+1);
+    }
+       return count;
+    }
+
+
 
     //O(n)
     private static void getAllSubArraysOfSumK(int[] nums , int sum){
@@ -96,4 +143,6 @@ public class SubarraySumEqualsK {
         }
         return maxLength;
     }
+
+
 }

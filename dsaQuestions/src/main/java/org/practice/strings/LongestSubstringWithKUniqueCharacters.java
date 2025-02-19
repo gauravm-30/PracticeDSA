@@ -42,6 +42,7 @@ public class LongestSubstringWithKUniqueCharacters {
        return uniqueChar.size() == k;
    }
 
+   //sliding window approach
    public static int longestSubstring(String s , int k){
 
         //two pointer of window, i ==start pointer and j == end pointer

@@ -5,7 +5,7 @@ public class MoveAllZerosToEnd {
 
   // Use two pointer technique
   public static void moveZeroes(int[] nums) {
-    int zIndex = 0; // will represent the index of zero value
+    int zIndex = 0; // will represent the index of zero value , currentIndex
     int nzIndex = 0; // will represent the index of non-zero value
     while (nzIndex < nums.length) {
       // move till nzIndex is at non-zero element

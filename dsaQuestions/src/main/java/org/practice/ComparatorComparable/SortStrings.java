@@ -1,9 +1,7 @@
 package org.practice.ComparatorComparable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.IntStream;
 
 // Points to remember about Comparator
 // We can define as many as comparator for the given  object
@@ -28,6 +26,8 @@ public class SortStrings {
     strings.add("Gaurav");
     strings.add("Ashish");
     strings.add("Sandeep");
+
+    char[] ch = "Gaurav".toCharArray();
 
     // create a comparator for string
     Comparator<String> stringDescComparator =

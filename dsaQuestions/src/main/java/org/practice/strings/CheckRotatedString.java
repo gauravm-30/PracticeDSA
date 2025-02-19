@@ -24,7 +24,7 @@ public class CheckRotatedString {
    //Imp function
     private static Set<String> getAllRotatedStrings(String s1) {
         Set<String> rotatedStringSet = new LinkedHashSet<>();
-        for(int i = 0; i < s1.length(); i++) {
+        for(int i = s1.length()-1; i >= 0; i--) {
             String rotatedString = s1.substring(i) + s1.substring(0,i);
                 rotatedStringSet.add(rotatedString);
         }

@@ -16,10 +16,17 @@ public class ConvertAnyDataTypeIntoStringAndViceVersa {
     }
 
     private static void StringToPrimitive() {
-        String s1 = "true";
-        Boolean b = Boolean.valueOf(s1);
-        boolean b1 = b.booleanValue();
+        String strInt = "123";
+        int intValue = Integer.parseInt(strInt); // intValue will be 123
+
+        String strFloat = "3.14";
+        float floatValue = Float.parseFloat(strFloat); // floatValue will be 3.14
+
+        String strBoolean = "true";
+        boolean booleanValue = Boolean.parseBoolean(strBoolean); // booleanValue will be true
     }
+
+
 
     private static void WrapperClassesToString() {
         Short s = 117;
